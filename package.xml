@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>p2_dduong3</name>
+  <version>1.0.0</version>
+  <description>Turtle bot autonomous navigation and ball following</description>
+
+  <maintainer email="dduong3@binghamton.edu">dduong3</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>actionlib</depend>
+  <depend>move_base_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>message_filters</depend>
+  
+  <exec_depend>depth_image_proc</exec_depend>
+
+</package>

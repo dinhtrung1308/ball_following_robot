@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="depth_image_proc" type="register" name="depth_register">
+    <remap from="rgb/camera_info" to="/usb_cam/camera_info"/>
+    <remap from="depth/camera_info" to="/camera/depth/camera_info"/>
+    <remap from="depth/image_rect" to="/camera/depth/image_raw"/>
+    <remap from="depth_registered/image_rect" to="/camera/depth_registered/image_raw"/>
+  </node>
+
+  <node pkg="p2_dduong3" type="p2b.py" name="green_ball_follower" output="screen">
+    </node>
+</launch>
