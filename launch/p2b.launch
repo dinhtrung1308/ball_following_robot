@@ -1,13 +1,7 @@
 <launch>
-  <node pkg="depth_image_proc" type="register" name="depth_register">
-    <remap from="rgb/camera_info" to="/camera/rgb/camera_info"/>
-    <remap from="depth/camera_info" to="/camera/depth/camera_info"/>
-    <remap from="depth/image_rect" to="/camera/depth/image_raw"/>
-    <remap from="depth_registered/image_rect" to="/camera/depth_registered/image_raw"/>
-  </node>
-
   <node pkg="p2_dduong3" type="p2b.py" name="green_ball_follower" output="screen">
     <param name="rgb_topic" value="/camera/rgb/image_raw"/>
     <param name="depth_topic" value="/camera/depth_registered/image_raw"/>
+    <param name="vel_topic" value="/cmd_vel"/>
   </node>
 </launch>
