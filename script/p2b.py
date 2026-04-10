@@ -66,7 +66,7 @@ class GreenBallFollower:
         # FIX 2 — use the depth image registered (reprojected) into the RGB
         # camera frame so that RGB pixel coords are valid inside it.
         depth_topic = rospy.get_param('~depth_topic',
-                                      '/camera/depth_registered/image_raw')
+                                      '/camera/depth/image_raw')
         vel_topic   = rospy.get_param('~vel_topic',   '/cmd_vel_mux/input/navi')
 
         # ── Internal state ─────────────────────────────────────────────────
