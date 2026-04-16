@@ -6,9 +6,9 @@ from tf.transformations import quaternion_from_euler
 from actionlib_msgs.msg import GoalStatus
 
 LOCATIONS = {
-    "L1": {"x": -2.92,  "y":  2.419, "yaw":  0.800},
-    "L2": {"x": 11.352, "y": 22.690, "yaw": -2.028},
-    "L3": {"x": 13.255, "y":  3.339, "yaw": -3.026},
+    "L1": {"x": -0.511,  "y":  13.283, "yaw":  0.00},
+    "L2": {"x": 0, "y": 18.1, "yaw": 0.00},
+    "L3": {"x": 12.261, "y":  18.009, "yaw": 0.00},
 }
 
 def send_goal(client, name):
