@@ -88,9 +88,6 @@ class GreenBallFollower:
                 1
             )
 
-        cv2.imshow("Green Ball Tracker", debug)
-        cv2.imshow("Green Mask", mask)
-        cv2.waitKey(1)
 
         self.drive(cx, cy, depth_image)
 
