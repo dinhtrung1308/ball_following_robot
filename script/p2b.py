@@ -20,7 +20,7 @@ class GreenBallFollower:
         self.p_gain_lin    = rospy.get_param('~p_gain_lin', 0.35)
         self.p_gain_ang    = rospy.get_param('~p_gain_ang', 1.0)
 
-        self.max_speed     = rospy.get_param('~max_speed', 0.18)
+        self.max_speed     = rospy.get_param('~max_speed', 0.4)
         self.max_rot       = rospy.get_param('~max_rot', 0.8)
 
         self.min_ball_area = rospy.get_param('~min_ball_area', 300)
