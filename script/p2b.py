@@ -60,12 +60,16 @@ class BallFollower:
             return None
         
     def read_depth_image(self, depth_msg):
+        #msg encodings
+        MSG_16UC1 = '16UC1'
+        MSG_32FC1 = '32FC1'
+
         try:
-            if depth_msg.encoding == '16UC1':
-                raw = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding='16UC1')
+            if depth_msg.encoding == MSG_16UC1:
+                raw = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding=MSG_16UC1)
                 depth_image = raw.astype(np.float32) / 1000.0
-            elif depth_msg.encoding == '32FC1':
-                depth_image = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding='32FC1')
+            elif depth_msg.encoding == MSG_32FC1:
+                depth_image = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding=MSG_32FC1)
                 sample = depth_image[depth_image.shape[0] // 2, depth_image.shape[1] // 2]
                 if np.isfinite(sample) and sample > 50.0:
                     depth_image = depth_image / 1000.0
@@ -132,9 +136,9 @@ class BallFollower:
             return None, None, msk
 
         largest = max(ct, key=cv2.contourArea)
-        area    = cv2.contourArea(largest)
+        a    = cv2.contourArea(largest)
 
-        if area < self.min_ball_area:
+        if a < self.min_ball_area:
             return None, None, msk
 
         M = cv2.moments(largest)
